@@ -1,4 +1,4 @@
 # ambertime
 my discord bot repo
 
-[Terms of Service](ToS.txt)
+[Terms of Service](ToS.md)
