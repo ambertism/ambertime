@@ -1,4 +1,4 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, ApplicationIntegrationType, InteractionContextType } = require('discord.js');
 
 // for this, i have everything required so if the user wants shortdate, they can fill the rest with random shit and not have to worry about it.
 // unfortunately im not very good at js because this is my first time, but if anyone would like to fork this project, they are free to go ahead. i have my config ignored by git, so all that you would need to put in there is your (example) clientId, (example) guildId, and bot token.
@@ -6,6 +6,9 @@ module.exports = {
     data: new SlashCommandBuilder()
         .setName('time')
         .setDescription('converts local time to unix/discord timestamp')
+        .setIntegrationTypes([ApplicationIntegrationType.GuildInstall, ApplicationIntegrationType.UserInstall])
+
+        .setContexts([InteractionContextType.Guild, InteractionContextType.BotDM, InteractionContextType.PrivateChannel])
         .addStringOption((option)=> option.setName('howthisworks').setDescription('if you want one part, fill the rest with 1jan1970(corresponding) if you understand type \" ok\" ').setRequired(true))
         .addIntegerOption((option) => option.setName('day').setDescription('The day of the month (1-31)').setRequired(true))
         .addIntegerOption((option) => option.setName('month').setDescription('The month (1-12)').setRequired(true))

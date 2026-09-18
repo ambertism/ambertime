@@ -1,4 +1,5 @@
-const { SlashCommandBuilder } = require('discord.js');
+const { SlashCommandBuilder, ApplicationIntegrationType, InteractionContextType } = require('discord.js');
+
 
 const data = new SlashCommandBuilder()
 	.setName('echo')
@@ -8,6 +9,12 @@ const data = new SlashCommandBuilder()
 module.exports = {
 	data,
 	async execute(interaction) {
-		await interaction.reply({ content: interaction.options.getString('input') });
+		
+		const roundtripLatency = sent.createdTimestamp - interaction.createdTimestamp;
+		const websocketPing = interaction.client.ws.ping;
+		
+		await interaction.reply({ content: interaction.options.getString('input') + ' \n -#' + roundtripLatency + 'ms (latency) | ' + websocketPing + 'ms (ping)' });
+
+
 	},
 };
