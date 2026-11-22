@@ -3,7 +3,7 @@ my discord bot repo
 
 # DISCONTINUATION
 thank you for checking out this repo!
-discord has now added mobile support for the @time command (previously only accessible on desktop), which completely removes the need for this bot.
+[discord has now added mobile support for the @time command](https://discord.com/blog/discord-update-november-19-2026) (previously only accessible on desktop), which completely removes the need for this bot.
 to any/all of you that came by and looked, thank you!
 this repo will no longer be updated/maintained. thank you for your support
 
